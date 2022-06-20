@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img src="" alt="" class="image">
+    <img :src="require(`@/assets/images/${card.image || 'fe1.jpg'}`)" alt="fe" class="image">
     <h3 class="header">
       {{card.title}}
     </h3>
