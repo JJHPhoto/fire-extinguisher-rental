@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Nav />
     <div v-if="product" class="container py-5">
         <div class="hero-container">
             <img :src="require(`@/assets/images/${product.image}`)" alt="" class="image">
@@ -34,21 +33,23 @@
         </div>
     </div>
     <div v-else class="container padding">
-      page not found
+      <PageNotFound />
     </div>
   </div>
 </template>
 
 <script>
   import { mapState } from 'vuex'
+import PageNotFound from '../../components/PageNotFound.vue'
 
   export default {
     computed: {
-      product() {
-        return this.$store.getters.getProductById(this.$route.params.id)
-      }
-    }
-  }
+        product() {
+            return this.$store.getters.getProductById(this.$route.params.id);
+        }
+    },
+    components: { PageNotFound }
+}
 </script>
 
 <style scoped>
