@@ -31,6 +31,7 @@
                 {{ product.description }}
             </p>
         </div>
+        <Reviews />
     </div>
     <div v-else class="container padding">
       <PageNotFound />
@@ -41,6 +42,7 @@
 <script>
   import { mapState } from 'vuex'
 import PageNotFound from '../../components/PageNotFound.vue'
+import Reviews from '../../components/Reviews.vue'
 
   export default {
     computed: {
@@ -48,7 +50,7 @@ import PageNotFound from '../../components/PageNotFound.vue'
             return this.$store.getters.getProductById(this.$route.params.id);
         }
     },
-    components: { PageNotFound }
+    components: { PageNotFound, Reviews }
 }
 </script>
 
