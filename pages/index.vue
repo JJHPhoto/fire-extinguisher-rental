@@ -1,4 +1,6 @@
 <template>
+  <div>
+    <Nav />
   <div class="container">
     <Hero />
     <LargeCardDisplay 
@@ -12,11 +14,13 @@
       :cardsSection="cardInfo"
     />
   </div>
+  </div>
 </template>
 
 <script>
 import { largeCardSections, smallCardSections } from "@/assets/data.js"
 import SmallCardDisplay from "../components/SmallCardDisplay.vue"
+import Nav from "../components/Nav.vue";
 
 export default {
     data() {
@@ -25,6 +29,6 @@ export default {
             smallCardSections
         };
     },
-    components: { SmallCardDisplay }
+    components: { SmallCardDisplay, Nav }
 }
 </script>
